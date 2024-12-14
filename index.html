@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task -2 Landing Page</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Righteous&family=Rowdies:wght@300;400;700&family=Saira:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *::after,
+        *::before {
+            box-sizing: inherit;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: "#ffffff";
+            font-family: "Righteous", "sans";
+        }
+
+        a {
+            cursor: pointer;
+        }
+        a:hover, button:hover {
+            opacity: 0.5;
+        }
+
+        h1,
+        h2,
+        h3 {
+            margin: 0;
+            padding: 0;
+            line-height: 1.2;
+        }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        righteous: ["Righteous", "sans"],
+                        rowdies: ["Rowdies", "sans"],
+                        saria: ["Saira", "sans"]
+                    },
+                },
+                colors: {
+                    primary: '#0E38CD',
+                    secondary: '#324361',
+                    white: '#ffffff',
+                    black: '#000000',
+                    dkblue: '#083F9B',
+                    purple: '#7F56D9',
+                    gray: "#4A4A4A",
+                }
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <!-- nav bar starts -->
+    <nav class="bg-white mx-[4rem] py-4">
+        <ul class="flex justify-between items-center">
+            <li>
+                <a class="block w-[190px] h-[110px] sm:w-[80px] sm:h-auto">
+                    <img class="w-full" src="./assets/header_logo.png"></a>
+            </li>
+            <div class="flex justify-between">
+                <ul class="justify-between gap-1 font-semibold hidden lg:flex">
+                    <li>
+                        <p><a href="#home" class="p-3">Home</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#about" class="p-3">About</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#course" class="p-3">Courses</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#contact" class="p-3">Contact</a></p>
+                    </li>
+                </ul>
+                <ul class="w-48 justify-center gap-2 mx-1 hidden lg:flex">
+                    <li><span class="block w-5 h-5"><img src="./assets/header_Icon_1.png" /></span></li>
+                    <li><span class="block w-5 h-5"><img src="./assets/header_Icon_2.png" /></span></li>
+                    <li><span class="block w-5 h-5"><img src="./assets/header_Icon_3.png" /></span></li>
+                </ul>
+                <ul class="flex justifybetween gap-1">
+                    <li>
+                        <a class="p-3 underline underline-offset-4 font-saira text-gray font-medium">Login</a>
+                    </li>
+                    <li>
+                        <a
+                            class="p-3 bg-primary text-white rounded-md bg-gradient-to-r from-dkblue to-purple font-medium">Signup</a>
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </nav>
+    <!-- nav bar ends  -->
+    <!-- Hero section starts -->
+    <section id="#hero">
+        <div class="pt-12 bg-gradient-to-r from-[#6e44ca] to-[#04016C]">
+            <div class="flex justify-between mx-[4rem]">
+                <div class="mt-10 text-white lg:w-[670px]">
+                    <p class="text-[1rem] opacity-85">Successful coaches are visionaries</p>
+
+                    <h1 class="m-0 leading-0 text-[3rem] font-medium">Good <span class="text-dkblue">coaching</span> is
+                        <br> good teaching & <br>nothing else.
+                    </h1>
+
+                    <div class="flex items-center gap-[3rem] mt-8">
+                        <button class="border p-2 rounded-md text-[1rem] font-regular">View Courses</button>
+                        <span class="">Get Free Consultation</span>
+                    </div>
+                    <div class="flex justify-between items-center mt-8 p-2 bg-white rounded-md w-[400px]">
+                        <input type="text" class="p-0 m-0 bg-white text-dkblue outline-none flex-1"
+                            placeholder="What do you want to learn today?">
+                        <button
+                            class="p-2 rounded-md text-[1rem] font-regular bg-gradient-to-l from-[#6e44ca] to-[#04016C] opacity-85"><span
+                                class="w-[20px] h-[20px] inline-block"><img class="w-full"
+                                    src="./assets/hero_search_white_icon.png"></span>Search</button>
+                    </div>
+                </div>
+                <!-- hero right side section  starts-->
+                <div class="relative">
+                    <!-- <div
+                        class="absolute h-[70vh] max-h-[700px] bg-white blur-3xl rounded-[40%] translate-y-[100px] translate-x-[40px]">
+                    </div> -->
+                    <div class="h-[80vh] max-h-[700px]">
+                        <img class="h-full" src="./assets/hero_lady_image.png">
+                    </div>
+                    <!-- <div class="absolute w-[300xp] -left-[50%] top-0">
+                        <img src="./assets/hero_cruv_icon.png" />
+                    </div> -->
+                </div>
+                <!-- hero right side section ends -->
+            </div>
+        </div>
+        <div class="h-[100px] bg-gradient-to-b from-[#2E08C7] to-[#7E08C7] flex items-center justify-between">
+            <ul class="flex justify-between items-center flex-1 px-[5rem]">
+                <li><span class="block h-[30px]"><img class="w-full" src="./assets/brand-1.png"></span>
+                </li>
+                <li><span class="block h-[20px]"><img class="w-full" src="./assets/brand-2.png"></span>
+                </li>
+                <li><span class="block h-[50px]"><img class="w-full" src="./assets/brand-3.png"></span>
+                </li>
+                <li><span class="block h-[30px]"><img class="w-full" src="./assets/brand-4.png"></span>
+                </li>
+                <li><span class="block h-[20px]"><img class="w-full" src="./assets/brand-2.png"></span>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Hero section ends -->
+
+    <!-- Features section starts -->
+    <section id="feature" class="bg-gradient-to-l from-[#D9ECFF] to-[#F0F3FF] p-[5rem]">
+        <h2 class="font-rowdies font-semibold text-[2rem] text-center">Featured <span class="text-primary">Course</span>
+        </h2>
+        <p class="font-rowdies text-center font-[100]">The feature courses are we invented our teaching part</p>
+        <div class="flex justify-between items-center gap-30 flex-wrap">
+
+            <div class="font-saria mt-[30px]">
+                <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
+                    <span class="block "><img class="w-full" src="./assets/card_image_1.png" /></span>
+                    <div class="p-3">
+                        <div class="flex justify-between text-[0.8rem]">
+                            <span>1,957 Students</span>
+                            <span>01h 59m</span>
+                        </div>
+                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
+                            Typography Animation</p>
+                        <div class="flex justify-between mt-4">
+                            <span class="font-medium">Rs.499</span>
+                            <span class="block w-[30px] h-[30px]">
+                                <img class="w-full" src="./assets/cart_icon.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-saria mt-[30px]">
+                <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
+                    <span class="block "><img class="w-full" src="./assets/card_image_2.png" /></span>
+                    <div class="p-3">
+                        <div class="flex justify-between text-[0.8rem]">
+                            <span>1,957 Students</span>
+                            <span>01h 59m</span>
+                        </div>
+                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
+                            Typography Animation</p>
+                        <div class="flex justify-between mt-4">
+                            <span class="font-medium">Rs.499</span>
+                            <span class="block w-[30px] h-[30px]">
+                                <img class="w-full" src="./assets/cart_icon.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-saria mt-[30px]">
+                <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
+                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <div class="p-3">
+                        <div class="flex justify-between text-[0.8rem]">
+                            <span>1,957 Students</span>
+                            <span>01h 59m</span>
+                        </div>
+                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
+                            Typography Animation</p>
+                        <div class="flex justify-between mt-4">
+                            <span class="font-medium">Rs.499</span>
+                            <span class="block w-[30px] h-[30px]">
+                                <img class="w-full" src="./assets/cart_icon.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-saria mt-[30px]">
+                <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
+                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <div class="p-3">
+                        <div class="flex justify-between text-[0.8rem]">
+                            <span>1,957 Students</span>
+                            <span>01h 59m</span>
+                        </div>
+                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
+                            Typography Animation</p>
+                        <div class="flex justify-between mt-4">
+                            <span class="font-medium">Rs.499</span>
+                            <span class="block w-[30px] h-[30px]">
+                                <img class="w-full" src="./assets/cart_icon.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-saria mt-[30px]">
+                <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
+                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <div class="p-3">
+                        <div class="flex justify-between text-[0.8rem]">
+                            <span>1,957 Students</span>
+                            <span>01h 59m</span>
+                        </div>
+                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
+                            Typography Animation</p>
+                        <div class="flex justify-between mt-4">
+                            <span class="font-medium">Rs.499</span>
+                            <span class="block w-[30px] h-[30px]">
+                                <img class="w-full" src="./assets/cart_icon.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="font-saria mt-[30px]">
+                <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
+                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <div class="p-3">
+                        <div class="flex justify-between text-[0.8rem]">
+                            <span>1,957 Students</span>
+                            <span>01h 59m</span>
+                        </div>
+                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
+                            Typography Animation</p>
+                        <div class="flex justify-between mt-4">
+                            <span class="font-medium">Rs.499</span>
+                            <span class="block w-[30px] h-[30px]">
+                                <img class="w-full" src="./assets/cart_icon.png" /></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <button
+            class="p-3 bg-primary text-white rounded-md bg-gradient-to-r from-dkblue to-purple font-medium mt-20 mx-auto block">Explore
+            courses</button>
+    </section>
+    <!-- Features section ends -->
+
+    <!-- Course Purpose section starts -->
+    <section id="coursePurpose" class="p-[5rem] text-white bg-gradient-to-r from-[#739FE8] to-[#4F18CA]">
+        <h2 class="font-rowdies font-semibold text-[2rem] text-center">Why <span class="text-primary">learn</span> with
+            our courses?
+        </h2>
+        <p class="mt-4 font-rowdies text-center font-[100]">We are providing the best courses and<br /> top classes.And
+            extradinery placement training.....</p>
+
+        <div class="flex justify-center items-center my-10">
+            <div class="w-[300px] p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
+                <p class="my-4">01. Learn</p>
+                <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
+                    “one more thing”to learn.</p>
+            </div>
+            <div class="h-[200px]">
+                <img class="w-full" src="./assets//line.png">
+            </div>
+            <div class="w-[300px] p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
+                <p class="my-4">01. Learn</p>
+                <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
+                    “one more thing”to learn.</p>
+            </div>
+            <div class="h-[200px]">
+                <img class="w-full" src="./assets//line.png">
+            </div>
+            <div class="w-[300px] p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
+                <p class="my-4">01. Learn</p>
+                <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
+                    “one more thing”to learn.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Course Purpose section ends -->
+
+    <!-- Category section starts -->
+    <!-- Course Purpose section starts -->
+    <section id="category" class="p-[5rem] text-black bg-gradient-to-r from-[#D9ECFF] to-[#D9ECFF] text-gray">
+        <h2 class="font-rowdies font-regular text-gray text-[1.5rem] text-center">Top <span
+                class="text-primary">Category</span>
+        </h2>
+        <p class="mt-4 font-rowdies text-center font-[100] text-gray">100+ unique online course list designs</p>
+
+        <div class="flex justify-between items-center mt-[5rem]">
+            <div class="bg-white rounded-md py-5 px-10">
+                <span class="block w-[70px] h-[70px] p-[20px] bg-[#DF385B]
+                rounded-md"><img class="w-full" src="./assets/category_icon_1.png" /></span>
+                <p class="text-center my-4 text-[1rem]">Digtal<br />
+                    Marketing</p>
+                <p class="text-[0.8rem] text-center">25 Courses</p>
+            </div>
+            <div class="bg-white rounded-md py-5 px-10">
+                <span class="block w-[70px] h-[70px] p-[20px] bg-[#5AB48E]
+                rounded-md"><img class="w-full" src="./assets/category_icon_2.png" /></span>
+                <p class="text-center my-4 text-[1rem]">Digtal<br />
+                    Marketing</p>
+                <p class="text-[0.8rem] text-center">25 Courses</p>
+            </div>
+            <div class="bg-white rounded-md py-5 px-10">
+                <span class="block w-[70px] h-[70px] p-[20px] bg-[#7F56D9]
+                rounded-md"><img class="w-full" src="./assets/category_icon_3.png" /></span>
+                <p class="text-center my-4 text-[1rem]">Digtal<br />
+                    Marketing</p>
+                <p class="text-[0.8rem] text-center">25 Courses</p>
+            </div>
+            <div class="bg-white rounded-md py-5 px-10">
+                <span class="block w-[70px] h-[70px] p-[20px] bg-[#FAB437]
+                rounded-md"><img class="w-full" src="./assets/category_icon_4.png" /></span>
+                <p class="text-center my-4 text-[1rem]">Digtal<br />
+                    Marketing</p>
+                <p class="text-[0.8rem] text-center">25 Courses</p>
+            </div>
+            <div class="bg-white rounded-md py-5 px-10">
+                <span class="block w-[70px] h-[70px] p-[20px] bg-[#2AAA94]
+                rounded-md"><img class="w-full" src="./assets/category_icon_5.png" /></span>
+                <p class="text-center my-4 text-[1rem]">Digtal<br />
+                    Marketing</p>
+                <p class="text-[0.8rem] text-center">25 Courses</p>
+            </div>
+            <div class="bg-white rounded-md py-5 px-10">
+                <span class="block w-[70px] h-[70px] p-[20px] bg-[#2CD182]
+                rounded-md"><img class="w-full" src="./assets/category_icon_6.png" /></span>
+                <p class="text-center my-4 text-[1rem]">Digtal<br />
+                    Marketing</p>
+                <p class="text-[0.8rem] text-center">25 Courses</p>
+            </div>
+
+        </div>
+    </section>
+    <!-- Category section ends -->
+
+    <!-- Testimonial section starts-->
+    <section id="testimonial" class="bg-white">
+
+        <div
+            class="bg-gradient-to-l from-[#E441FF] to-[#00B3FF] rounded-[100px] p-20 w-[70%] mx-auto my-20 flex justify-between">
+            <div class="flex flex-col">
+                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[3rem]"><img src="./assets/avatar_1.png"
+                        class="w-full" /></span>
+                <span class="block w-[60px] h-[60px] rounded-[50%] my-20 translate-x-[9rem]"><img
+                        src="./assets/avatar_2.png" class="w-full" /></span>
+                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[3.5rem]"><img
+                        src="./assets/avatar_3.png" class="w-full" /></span>
+            </div>
+            <div class="w-[60%] ml-auto text-white">
+                <h3 class="text-[2rem] text-center">Subscribe For Get Update<br />
+                    Every New Courses</h3>
+                <p class="text-[0.8rem] my-6 text-center opacity-70">20k+ students daily learn with Eduvi. Subscribe for
+                    new courses.</p>
+                <div class="flex justify-between items-center mt-8 p-2  rounded-md w-[400px] bg-white">
+                    <input type="text" class="p-0 m-0 opacity-85  outline-none flex-1 bg-white"
+                        placeholder="enter your email">
+                    <button class="p-2 rounded-md text-[1rem] font-regular bg-[#0E38CD] text-white">Submit</button>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[4rem]"><img src="./assets/avatar_4.png"
+                        class="w-full" /></span>
+                <span class="block w-[60px] h-[60px] rounded-[50%] my-20 "><img src="./assets/avatar_5.png"
+                        class="w-full" /></span>
+                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[8rem]"><img src="./assets/avatar_6.png"
+                        class="w-full" /></span>
+            </div>
+        </div>
+
+        <div class="w-[700px] h-[400px] mx-auto my-10 overflow-hidden rounded-lg">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/K4TOrB7at0Y?si=6OPMMRe_lQv6jTqw"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <div class="mt-20">
+            <h2 class="font-rowdies font-regular text-gray text-[1.5rem] text-center"><span
+                    class="text-primary">Testimonials</span>
+            </h2>
+            <p class="mt-4 font-rowdies text-center font-[100] text-gray my-10">1What our student say about us</p>
+
+
+        </div>
+    </section>
+    <!-- Testimonial section ends -->
+
+    <!-- Footer section starts -->
+    <section id="footer">
+        <div class="px-[5rem] p-10  bg-gradient-to-r from-[#477AE3] to-[#931BBD] flex justify-between">
+            <div class="flex flex-col">
+                <p>Connect</p>
+                <span class="block my-8"><img src="./assets/header_logo.png" /></span>
+                <small class="text-gray">Sri Jagannath Nivas,8-1-164/345/A/1,<br />
+                    Pragati Colony, Mailardevpally, Nawab <br />
+                    Saheb Kunta, Hyd, 500005 <br /></small>
+            </div>
+            <div class="flex flex-col">
+                <p>Connect</p>
+                <p class="text-[0.8rem]">Classroom courses</p>
+                <p class="text-[0.8rem]">Virtual classroom courses</p>
+                <p class="text-[0.8rem]">E-learning courses</p>
+                <p class="text-[0.8rem]">Video Courses</p>
+                <p class="text-[0.8rem]">Offline Courses</p>
+            </div>
+            <div class="flex flex-col">
+                <p>Community</p>
+                <p class="text-[0.8rem]">Classroom courses</p>
+                <p class="text-[0.8rem]">Virtual classroom courses</p>
+                <p class="text-[0.8rem]">E-learning courses</p>
+                <p class="text-[0.8rem]">Video Courses</p>
+                <p class="text-[0.8rem]">Offline Courses</p>
+            </div>
+            <div class="flex flex-col">
+                <p>Quick links</p>
+                <p class="text-[0.8rem]">Classroom courses</p>
+                <p class="text-[0.8rem]">Virtual classroom courses</p>
+                <p class="text-[0.8rem]">E-learning courses</p>
+                <p class="text-[0.8rem]">Video Courses</p>
+                <p class="text-[0.8rem]">Offline Courses</p>
+            </div>
+            <div class="flex flex-col">
+                <p>More</p>
+                <p class="text-[0.8rem]">Press</p>
+                <p class="text-[0.8rem]">Investors</p>
+                <p class="text-[0.8rem]">Terms</p>
+                <p class="text-[0.8rem]">Privacy</p>
+                <p class="text-[0.8rem]">Help</p>
+                <p class="text-[0.8rem]">Contact</p>
+            </div>
+        </div>
+        <div class="pb-3 pt-[5rem]  bg-gradient-to-l from-[#0351AE] to-[#A542C8] flex justify-between items-center">
+            <div class="flex gap-[2rem] mx-auto">
+                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                        src="./assets/footer_scoial-media_icon_1.png" /></span>
+                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                        src="./assets/footer_scoial-media_icon_2.png" /></span>
+                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                        src="./assets/footer_scoial-media_icon_3.png" /></span>
+                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                        src="./assets/footer_scoial-media_icon_4.png" /></span>
+                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                        src="./assets/footer_scoial-media_icon_5.png" /></span>
+            </div>
+        </div>
+        <div class="bg-gradient-to-b from-[#0351AE] to-[#A542C8] p-2 flex justify-center items-center">
+            <small class="text-white text-center">Copyright @ 2023 askmeidentity. All Rights Reserved</small>
+        </div>
+    </section>
+    <!-- Footer section ends -->
+</body>
+
+</html>
