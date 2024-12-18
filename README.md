@@ -1,4 +1,4 @@
-# Guvi-Task-2
+# [Guvi-Task-2](https://guvi-task-2-eta.vercel.app/)
 ## Following technologies used
   - HTML
   - Tailwind CSS
