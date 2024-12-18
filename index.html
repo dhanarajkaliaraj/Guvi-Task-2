@@ -32,7 +32,9 @@
         a {
             cursor: pointer;
         }
-        a:hover, button:hover {
+
+        a:hover,
+        button:hover {
             opacity: 0.5;
         }
 
@@ -49,6 +51,11 @@
         tailwind.config = {
             theme: {
                 extend: {
+                    boxShadow: {
+                        'imgShadow': `0px 0px 170px 81px rgba(255,255,255,0.8);
+                                    -webkit-box-shadow: 0px 0px 170px 81px rgba(255,255,255,0.8);
+                                    -moz-box-shadow: 0px 0px 170px 81px rgba(255,255,255,0.8);`
+                    },
                     fontFamily: {
                         righteous: ["Righteous", "sans"],
                         rowdies: ["Rowdies", "sans"],
@@ -63,6 +70,7 @@
                     dkblue: '#083F9B',
                     purple: '#7F56D9',
                     gray: "#4A4A4A",
+                    yellow: '#FAB437'
                 }
             },
         };
@@ -71,10 +79,10 @@
 
 <body>
     <!-- nav bar starts -->
-    <nav class="bg-white mx-[4rem] py-4">
+    <nav class="bg-white mx-[1rem] md:mx-[5rem] py-2 ">
         <ul class="flex justify-between items-center">
             <li>
-                <a class="block w-[190px] h-[110px] sm:w-[80px] sm:h-auto">
+                <a class="block w-[80px] h-auto md:w-[160px]">
                     <img class="w-full" src="./assets/header_logo.png"></a>
             </li>
             <div class="flex justify-between">
@@ -93,7 +101,9 @@
                     </li>
                 </ul>
                 <ul class="w-48 justify-center gap-2 mx-1 hidden lg:flex">
-                    <li><span class="block w-5 h-5"><img src="./assets/header_Icon_1.png" /></span></li>
+                    <li class="relative"><span
+                            class="absolute -top-[8px] left-[8px] bg-[#2AAA94] text-white px-[0.3rem] text-[0.5rem] rounded-[50%]">0</span><span
+                            class="block w-5 h-5"><img src="./assets/header_Icon_1.png" /></span></li>
                     <li><span class="block w-5 h-5"><img src="./assets/header_Icon_2.png" /></span></li>
                     <li><span class="block w-5 h-5"><img src="./assets/header_Icon_3.png" /></span></li>
                 </ul>
@@ -112,54 +122,89 @@
     <!-- nav bar ends  -->
     <!-- Hero section starts -->
     <section id="#hero">
-        <div class="pt-12 bg-gradient-to-r from-[#6e44ca] to-[#04016C]">
-            <div class="flex justify-between mx-[4rem]">
-                <div class="mt-10 text-white lg:w-[670px]">
+        <div class="pt-10 bg-gradient-to-r from-[#6e44ca] to-[#04016C]">
+            <div class="flex justify-center md:justify-start mx-[1rem] md:mx-[5rem] h-[100vh] lg:h-[80vh]">
+                <!-- hero left side section starts -->
+                <div class="mt-2 md:mt-10 text-white md:w-[680px] text-center md:text-left self-center">
                     <p class="text-[1rem] opacity-85">Successful coaches are visionaries</p>
 
-                    <h1 class="m-0 leading-0 text-[3rem] font-medium">Good <span class="text-dkblue">coaching</span> is
+                    <h1 class="m-0 leading-0 text-[2rem] md:text-[3rem] font-medium">Good <span
+                            class="text-dkblue">coaching</span> is
                         <br> good teaching & <br>nothing else.
                     </h1>
 
                     <div class="flex items-center gap-[3rem] mt-8">
-                        <button class="border p-2 rounded-md text-[1rem] font-regular">View Courses</button>
-                        <span class="">Get Free Consultation</span>
+                        <button
+                            class="border p-1 md:p-2 rounded-md text-[0.8rem] md:text-[1rem] font-regular whitespace-nowrap">View
+                            Courses</button>
+                        <span class="text-[0.8rem] md:text-[1rem] whitespace-nowrap">Get Free Consultation</span>
                     </div>
-                    <div class="flex justify-between items-center mt-8 p-2 bg-white rounded-md w-[400px]">
-                        <input type="text" class="p-0 m-0 bg-white text-dkblue outline-none flex-1"
+                    <div
+                        class="mb-10 md:mb-0 flex-col md:flex-row  flex justify-between items-center mt-8 p-2 bg-white rounded-md max-w-[400px]">
+                        <input type="text"
+                            class="p-0 m-0 bg-white text-dkblue outline-none flex-1 mb-4 mr-3 md:mb-0 text-[0.8rem] md:text-[1rem] w-full md:w-auto"
                             placeholder="What do you want to learn today?">
                         <button
-                            class="p-2 rounded-md text-[1rem] font-regular bg-gradient-to-l from-[#6e44ca] to-[#04016C] opacity-85"><span
-                                class="w-[20px] h-[20px] inline-block"><img class="w-full"
+                            class="w-full md:w-auto py-2 px-4 rounded-md text-[1rem] font-regular bg-gradient-to-l from-[#6e44ca] to-[#04016C] opacity-85"><span
+                                class="w-[20px] h-[20px] inline-block pt-[4px] mx-[4px]"><img class="w-full"
                                     src="./assets/hero_search_white_icon.png"></span>Search</button>
                     </div>
                 </div>
+                <!-- hero left side section ends -->
+
                 <!-- hero right side section  starts-->
-                <div class="relative">
+                <div class="hidden lg:inline-block relative w-full">
                     <!-- <div
                         class="absolute h-[70vh] max-h-[700px] bg-white blur-3xl rounded-[40%] translate-y-[100px] translate-x-[40px]">
                     </div> -->
-                    <div class="h-[80vh] max-h-[700px]">
-                        <img class="h-full" src="./assets/hero_lady_image.png">
+                    <div class="mt-20 ml-20 flex">
+                        <span class="w-[30px] block"><img class="w-full" src="./assets/hero_quotes_icon.png" /></span>
+                        <div class="text-white flex justify-between flex-col w-[200px] ml-[12px]">
+                            <p>Shyam</p>
+                            <p class="my-[5px]">In a coaching role, you ask the questions and rely more on your
+                                staff, who become the experts, to provide the information.
+                            </p>
+                            <span class="text-[#0094E7]">4.9</span>
+                        </div>
+                        <span class="absolute w-[120px] bottom-0 left-10"><img class="w-full"
+                                src="./assets/hero_curv_icon2.png" />
+
+                        </span>
+                        <span class="absolute w-[80px] bottom-0 -translate-x-5 ">
+                            <img class="w-full" src="./assets/hero_curv_icon3.png" />
+                        </span>
+
+                        <span class="absolute w-[40px] bottom-0 translate-x">
+                            <img class="w-full" src="./assets/hero_curv_icon4.png" />
+                        </span>
                     </div>
-                    <!-- <div class="absolute w-[300xp] -left-[50%] top-0">
-                        <img src="./assets/hero_cruv_icon.png" />
-                    </div> -->
+
+                    <div class="absolute w-[300px] md:h-[500px] bg-white rounded-[40%] blur-3xl z-[9] right-0 bottom-0">
+                    </div>
+                    <div class="w-[350px]  absolute right-0 bottom-0 z-[10]">
+                        <img class="w-full z-20" src="./assets/hero_lady_image.png">
+                    </div>
                 </div>
                 <!-- hero right side section ends -->
             </div>
         </div>
-        <div class="h-[100px] bg-gradient-to-b from-[#2E08C7] to-[#7E08C7] flex items-center justify-between">
-            <ul class="flex justify-between items-center flex-1 px-[5rem]">
-                <li><span class="block h-[30px]"><img class="w-full" src="./assets/brand-1.png"></span>
+        <div class="h-auto md:h-[120px] bg-gradient-to-b from-[#2E08C7] to-[#7E08C7] flex justify-center ">
+            <ul
+                class="flex justify-evenly md:justify-between items-center px-[1rem] py-[2rem] px-[1rem] md:px-[5rem] w-full flex-wrap gap-3">
+                <li class="mb-[1.5rem] md:mb-0"><span class="block h-[30px]"><img class="w-full"
+                            src="./assets/brand-1.png"></span>
                 </li>
-                <li><span class="block h-[20px]"><img class="w-full" src="./assets/brand-2.png"></span>
+                <li class="mb-[1.5rem] md:mb-0"><span class="block h-[20px]"><img class="w-full"
+                            src="./assets/brand-2.png"></span>
                 </li>
-                <li><span class="block h-[50px]"><img class="w-full" src="./assets/brand-3.png"></span>
+                <li class="mb-[1.5rem] md:mb-0"><span class="block h-[50px]"><img class="w-full"
+                            src="./assets/brand-3.png"></span>
                 </li>
-                <li><span class="block h-[30px]"><img class="w-full" src="./assets/brand-4.png"></span>
+                <li class="mb-[1.5rem] md:mb-0"><span class="block h-[30px]"><img class="w-full"
+                            src="./assets/brand-4.png"></span>
                 </li>
-                <li><span class="block h-[20px]"><img class="w-full" src="./assets/brand-2.png"></span>
+                <li class="mb-[1.5rem] md:mb-0"><span class="block h-[20px]"><img class="w-full"
+                            src="./assets/brand-2.png"></span>
                 </li>
             </ul>
         </div>
@@ -167,11 +212,12 @@
     <!-- Hero section ends -->
 
     <!-- Features section starts -->
-    <section id="feature" class="bg-gradient-to-l from-[#D9ECFF] to-[#F0F3FF] p-[5rem]">
-        <h2 class="font-rowdies font-semibold text-[2rem] text-center">Featured <span class="text-primary">Course</span>
+    <section id="feature" class="bg-gradient-to-l from-[#D9ECFF] to-[#F0F3FF] p-[1rem] md:p-[5rem]">
+        <h2 class="font-rowdies font-semibold text-[1.5rem] md:text-[2rem] text-center before:content-[''] before:w-[60px] before:h-[60px] before:bg-[url(./assets/course_section_decor_ring.png)] before:bg-no-repeat before:absolute before:hidden md:before:block before:bg-contain before:translate-x-10">Featured <span
+                class="text-primary">Course</span>
         </h2>
         <p class="font-rowdies text-center font-[100]">The feature courses are we invented our teaching part</p>
-        <div class="flex justify-between items-center gap-30 flex-wrap">
+        <div class="flex justify-center md:justify-between items-center gap-30 flex-wrap mt-10">
 
             <div class="font-saria mt-[30px]">
                 <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
@@ -200,8 +246,8 @@
                             <span>1,957 Students</span>
                             <span>01h 59m</span>
                         </div>
-                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
-                            Typography Animation</p>
+                        <p class="font-saira font-semibold mt-4">Advance PHP knowledge with JS to
+                            make smart web</p>
                         <div class="flex justify-between mt-4">
                             <span class="font-medium">Rs.499</span>
                             <span class="block w-[30px] h-[30px]">
@@ -219,8 +265,8 @@
                             <span>1,957 Students</span>
                             <span>01h 59m</span>
                         </div>
-                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
-                            Typography Animation</p>
+                        <p class="font-saira font-semibold mt-4">Education Software and PHP and JS
+                            System Script</p>
                         <div class="flex justify-between mt-4">
                             <span class="font-medium">Rs.499</span>
                             <span class="block w-[30px] h-[30px]">
@@ -232,14 +278,14 @@
 
             <div class="font-saria mt-[30px]">
                 <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
-                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <span class="block "><img class="w-full" src="./assets/card_image_4.png" /></span>
                     <div class="p-3">
                         <div class="flex justify-between text-[0.8rem]">
                             <span>1,957 Students</span>
                             <span>01h 59m</span>
                         </div>
-                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
-                            Typography Animation</p>
+                        <p class="font-saira font-semibold mt-4">The Complete Financial Analyst
+                            Training & Investing</p>
                         <div class="flex justify-between mt-4">
                             <span class="font-medium">Rs.499</span>
                             <span class="block w-[30px] h-[30px]">
@@ -251,14 +297,14 @@
 
             <div class="font-saria mt-[30px]">
                 <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
-                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <span class="block "><img class="w-full" src="./assets/card_image_5.png" /></span>
                     <div class="p-3">
                         <div class="flex justify-between text-[0.8rem]">
                             <span>1,957 Students</span>
                             <span>01h 59m</span>
                         </div>
-                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
-                            Typography Animation</p>
+                        <p class="font-saira font-semibold mt-4">Marketing 2023: Complete Guide To
+                            Instagram Growth</p>
                         <div class="flex justify-between mt-4">
                             <span class="font-medium">Rs.499</span>
                             <span class="block w-[30px] h-[30px]">
@@ -270,14 +316,14 @@
 
             <div class="font-saria mt-[30px]">
                 <div class="flex flex-col max-w-[300px] text-gray rounded-lg bg-white">
-                    <span class="block "><img class="w-full" src="./assets/card_image_3.png" /></span>
+                    <span class="block "><img class="w-full" src="./assets/card_image_6.png" /></span>
                     <div class="p-3">
                         <div class="flex justify-between text-[0.8rem]">
                             <span>1,957 Students</span>
                             <span>01h 59m</span>
                         </div>
-                        <p class="font-saira font-semibold mt-4">Motion Graphics: Create a Nice
-                            Typography Animation</p>
+                        <p class="font-saira font-semibold mt-4">Learn 3D Modelling and Design
+                            for Beginners</p>
                         <div class="flex justify-between mt-4">
                             <span class="font-medium">Rs.499</span>
                             <span class="block w-[30px] h-[30px]">
@@ -295,87 +341,118 @@
     <!-- Features section ends -->
 
     <!-- Course Purpose section starts -->
-    <section id="coursePurpose" class="p-[5rem] text-white bg-gradient-to-r from-[#739FE8] to-[#4F18CA]">
-        <h2 class="font-rowdies font-semibold text-[2rem] text-center">Why <span class="text-primary">learn</span> with
+    <section id="coursePurpose" class="p-[2rem] md:p-[5rem] text-white bg-gradient-to-r from-[#739FE8] to-[#4F18CA] 
+    ">
+        <h2 class="font-rowdies font-semibold  text-[1.5rem] md:text-[2rem] text-center">Why <span
+                class="text-primary">learn</span> with
             our courses?
         </h2>
         <p class="mt-4 font-rowdies text-center font-[100]">We are providing the best courses and<br /> top classes.And
             extradinery placement training.....</p>
 
-        <div class="flex justify-center items-center my-10">
-            <div class="w-[300px] p-[2rem] flex justify-center items-center flex-col">
+        <div class="flex justify-center items-start md:items-center my-5 md:my-10">
+            <div class="w-[150px] md:w-[300px] p-[0.5rem] md:p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[50px] md:w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
+                <p class="my-2 md:my-4 text-[0.8rem] md:text-[1rem]">01. Learn</p>
+                <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
+                    “one more thing”to learn.</p>
+            </div>
+            <div class="h-[200px]">
+                <img class="w-full" src="./assets/line.png">
+            </div>
+            <div class="w-[150px] md:w-[300px] p-[0.5rem] md:p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[50px] md:w-[80px]"><img class="w-full" src="./assets/course_icon_2.png" /></span>
+                <p class="my-2 md:my-4 text-[0.8rem] md:text-[1rem]">02. Graduate</p>
+                <p class="text-[0.8rem] font-[100] text-center">Be bold,be courageous,
+                    be your best.</p>
+            </div>
+            <div class="h-[200px]">
+                <img class="w-full" src="./assets/line.png">
+            </div>
+            <div class="w-[150px] md:w-[300px] p-[0.5rem] md:p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[50px] md:w-[80px]"><img class="w-full" src="./assets/course_icon_3.png" /></span>
+                <p class="my-2 md:my-4 text-[0.8rem] md:text-[1rem]">03. Work</p>
+                <p class="text-[0.8rem] font-[100] text-center">Great companies are built in the office,with hard work
+                    put
+                    in by team.</p>
+            </div>
+            <!-- <div class="w-[150px] md:w-[300px] p-[2rem] flex justify-center items-center flex-col">
                 <span class="block w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
                 <p class="my-4">01. Learn</p>
                 <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
                     “one more thing”to learn.</p>
             </div>
             <div class="h-[200px]">
-                <img class="w-full" src="./assets//line.png">
+                <img class="w-full" src="./assets/line.png">
             </div>
-            <div class="w-[300px] p-[2rem] flex justify-center items-center flex-col">
-                <span class="block w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
+            <div class="w-[150px] md:w-[300px] p-[2rem] flex justify-center items-center flex-col">
+                <span class="block w-[80px]">
+                <img class="w-full" src="./assets/course_icon_1.png" /></span>
                 <p class="my-4">01. Learn</p>
                 <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
                     “one more thing”to learn.</p>
-            </div>
-            <div class="h-[200px]">
-                <img class="w-full" src="./assets//line.png">
-            </div>
-            <div class="w-[300px] p-[2rem] flex justify-center items-center flex-col">
-                <span class="block w-[80px]"><img class="w-full" src="./assets/course_icon_1.png" /></span>
-                <p class="my-4">01. Learn</p>
-                <p class="text-[0.8rem] font-[100] text-center">Learn continually. There is always
-                    “one more thing”to learn.</p>
-            </div>
+            </div> -->
+        </div>
+
+        <div class="w-[150px] h-[170px] rotate-90 absolute -translate-y-[250px] -translate-x-[10rem] hidden md:block ">
+            <span class="absolute w-[180px] bottom-0 -translate-x-10"><img class="w-full" src="./assets/hero_curv_icon2.png" />
+            </span>
+            <span class="absolute w-[140px] bottom-0 -translate-x-5 ">
+                <img class="w-full" src="./assets/hero_curv_icon3.png" />
+            </span>
+
+            <span class="absolute w-[100px] bottom-0 translate-x">
+                <img class="w-full" src="./assets/hero_curv_icon4.png" />
+            </span>
         </div>
     </section>
     <!-- Course Purpose section ends -->
 
     <!-- Category section starts -->
-    <!-- Course Purpose section starts -->
-    <section id="category" class="p-[5rem] text-black bg-gradient-to-r from-[#D9ECFF] to-[#D9ECFF] text-gray">
+    <section id="category"
+        class="p-[1rem] md:p-[5rem] text-black bg-gradient-to-r from-[#D9ECFF] to-[#D9ECFF] text-gray">
         <h2 class="font-rowdies font-regular text-gray text-[1.5rem] text-center">Top <span
                 class="text-primary">Category</span>
         </h2>
         <p class="mt-4 font-rowdies text-center font-[100] text-gray">100+ unique online course list designs</p>
 
-        <div class="flex justify-between items-center mt-[5rem]">
-            <div class="bg-white rounded-md py-5 px-10">
+        <div class="flex justify-center md:justify-between items-center mt-[5rem] flex-wrap gap-4 md:gap-0">
+            <div class="bg-white rounded-md py-5 px-10 mb-[2rem] mx-auto">
                 <span class="block w-[70px] h-[70px] p-[20px] bg-[#DF385B]
                 rounded-md"><img class="w-full" src="./assets/category_icon_1.png" /></span>
                 <p class="text-center my-4 text-[1rem]">Digtal<br />
                     Marketing</p>
                 <p class="text-[0.8rem] text-center">25 Courses</p>
             </div>
-            <div class="bg-white rounded-md py-5 px-10">
+            <div class="bg-white rounded-md py-5 px-10 mb-[2rem] mx-auto">
                 <span class="block w-[70px] h-[70px] p-[20px] bg-[#5AB48E]
                 rounded-md"><img class="w-full" src="./assets/category_icon_2.png" /></span>
                 <p class="text-center my-4 text-[1rem]">Digtal<br />
                     Marketing</p>
                 <p class="text-[0.8rem] text-center">25 Courses</p>
             </div>
-            <div class="bg-white rounded-md py-5 px-10">
+            <div class="bg-white rounded-md py-5 px-10 mb-[2rem] mx-auto">
                 <span class="block w-[70px] h-[70px] p-[20px] bg-[#7F56D9]
                 rounded-md"><img class="w-full" src="./assets/category_icon_3.png" /></span>
                 <p class="text-center my-4 text-[1rem]">Digtal<br />
                     Marketing</p>
                 <p class="text-[0.8rem] text-center">25 Courses</p>
             </div>
-            <div class="bg-white rounded-md py-5 px-10">
+            <div class="bg-white rounded-md py-5 px-10 mb-[2rem] mx-auto">
                 <span class="block w-[70px] h-[70px] p-[20px] bg-[#FAB437]
                 rounded-md"><img class="w-full" src="./assets/category_icon_4.png" /></span>
                 <p class="text-center my-4 text-[1rem]">Digtal<br />
                     Marketing</p>
                 <p class="text-[0.8rem] text-center">25 Courses</p>
             </div>
-            <div class="bg-white rounded-md py-5 px-10">
+            <div class="bg-white rounded-md py-5 px-10 mb-[2rem] mx-auto">
                 <span class="block w-[70px] h-[70px] p-[20px] bg-[#2AAA94]
                 rounded-md"><img class="w-full" src="./assets/category_icon_5.png" /></span>
                 <p class="text-center my-4 text-[1rem]">Digtal<br />
                     Marketing</p>
                 <p class="text-[0.8rem] text-center">25 Courses</p>
             </div>
-            <div class="bg-white rounded-md py-5 px-10">
+            <div class="bg-white rounded-md py-5 px-10 mb-[2rem] mx-auto">
                 <span class="block w-[70px] h-[70px] p-[20px] bg-[#2CD182]
                 rounded-md"><img class="w-full" src="./assets/category_icon_6.png" /></span>
                 <p class="text-center my-4 text-[1rem]">Digtal<br />
@@ -388,93 +465,175 @@
     <!-- Category section ends -->
 
     <!-- Testimonial section starts-->
-    <section id="testimonial" class="bg-white">
-
-        <div
-            class="bg-gradient-to-l from-[#E441FF] to-[#00B3FF] rounded-[100px] p-20 w-[70%] mx-auto my-20 flex justify-between">
-            <div class="flex flex-col">
-                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[3rem]"><img src="./assets/avatar_1.png"
+    <section id="testimonial" class="bg-gradient-to-b from-[#ffffff] to-[#DBEDFF]">
+        <div class="bg-gradient-to-l from-[#E441FF] to-[#00B3FF] rounded-[20px] w-[70%] mx-auto my-20 lg:my-[10rem] py-12 flex justify-between before:content-[''] before:w-[40px] before:h-[40px] before:bg-[url(./assets/subscribe_decor_polygon_2.png)] before:bg-no-repeat before:absolute before:hidden md:before:block before:bg-contain before:translate-y-[14rem] before:-translate-x-4 
+            after:content-[''] after:w-[40px] after:h-[40px] after:bg-[url(./assets/subscribe_decor_polygon_3.png)] after:bg-no-repeat after:absolute after:right-[10rem] after:translate-y-[18rem] after:hidden md:after:block after:bg-contain
+            ">
+            <div class="hidden lg:flex flex-col ">
+                <span class="block w-[50px] h-[50px] rounded-[50%] translate-x-[2rem]"><img src="./assets/avatar_6.png"
                         class="w-full" /></span>
-                <span class="block w-[60px] h-[60px] rounded-[50%] my-20 translate-x-[9rem]"><img
-                        src="./assets/avatar_2.png" class="w-full" /></span>
-                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[3.5rem]"><img
-                        src="./assets/avatar_3.png" class="w-full" /></span>
+                <span class="block w-[50px] h-[50px] rounded-[50%] translate-x-[8rem]"><img src="./assets/avatar_5.png"
+                        class="w-full" /></span>
+                <span class="block w-[50px] h-[50px] rounded-[50%] translate-x-[4rem] translate-y-[3rem]"><img
+                        src="./assets/avatar_4.png" class="w-full" /></span>
             </div>
-            <div class="w-[60%] ml-auto text-white">
-                <h3 class="text-[2rem] text-center">Subscribe For Get Update<br />
+            <div class="w-full lg:w-[70%] text-white flex flex-col justify-center items-center">
+                <h3
+                    class="px-[2rem] text-[1.5rem] md:text-[2rem] text-center before:content-[''] before:w-[40px] before:h-[40px] before:bg-[url(./assets/subscribe_decor_polygon_1.png)]  before:bg-no-repeat before:translate-x-[6rem] before:absolute before:hidden md:before:block before:bg-contain before:-translate-y-10">
+                    Subscribe For Get Update<br />
                     Every New Courses</h3>
                 <p class="text-[0.8rem] my-6 text-center opacity-70">20k+ students daily learn with Eduvi. Subscribe for
                     new courses.</p>
-                <div class="flex justify-between items-center mt-8 p-2  rounded-md w-[400px] bg-white">
-                    <input type="text" class="p-0 m-0 opacity-85  outline-none flex-1 bg-white"
+                <div
+                    class="justify-center lg:pl-3 lg:w-[80%] flex flex-col lg:flex-row lg:justify-between items-center rounded-md bg-white ">
+                    <input type="text"
+                        class="p-2 lg:p-0 m-0 opacity-85  outline-none bg-white text-black text-[0.8rem] md:text-[1rem]"
                         placeholder="enter your email">
-                    <button class="p-2 rounded-md text-[1rem] font-regular bg-[#0E38CD] text-white">Submit</button>
+                    <button
+                        class="rounded-md lg:rounded-l-none py-1 lg:py-3 px-4  w-full lg:w-auto  text-[0.8rem] md:text-[1rem] font-regular bg-[#0E38CD] text-white">Subscribe</button>
                 </div>
             </div>
 
-            <div class="flex flex-col">
-                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[4rem]"><img src="./assets/avatar_4.png"
+            <div class="hidden lg:flex flex-col">
+                <span class="block w-[50px] h-[50px] rounded-[50%] -translate-x-[3rem]"><img src="./assets/avatar_3.png"
                         class="w-full" /></span>
-                <span class="block w-[60px] h-[60px] rounded-[50%] my-20 "><img src="./assets/avatar_5.png"
-                        class="w-full" /></span>
-                <span class="block w-[60px] h-[60px] rounded-[50%] translate-x-[8rem]"><img src="./assets/avatar_6.png"
-                        class="w-full" /></span>
+                <span class="block w-[50px] h-[50px] rounded-[50%]  -translate-x-[6rem] translate-y-[2rem]"><img
+                        src="./assets/avatar_2.png" class="w-full" /></span>
+                <span class="block w-[50px] h-[50px] rounded-[50%] -translate-x-[1.2rem] translate-y-[3rem]"><img
+                        src="./assets/avatar_1.png" class="w-full" /></span>
             </div>
         </div>
 
-        <div class="w-[700px] h-[400px] mx-auto my-10 overflow-hidden rounded-lg">
-            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/K4TOrB7at0Y?si=6OPMMRe_lQv6jTqw"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div
+            class="px-[1rem] max-w-[700px] h-[400px] mx-auto my-10 overflow-hidden after:content-[''] after:w-[110px] after:h-[110px] after:bg-[url(./assets/video_decor.png)]  after:bg-no-repeat after:ml-[5rem] after:absolute after:hidden md:after:block after:bg-contain after:translate-x-[500px] after:-translate-y-20">
+            <div class="rounded-[100px] w-full h-full overflow-hidden">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/K4TOrB7at0Y?si=6OPMMRe_lQv6jTqw"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
-
-        <div class="mt-20">
-            <h2 class="font-rowdies font-regular text-gray text-[1.5rem] text-center"><span
-                    class="text-primary">Testimonials</span>
+        <!-- testinmonial cards section start -->
+        <div class="mt-10 md:mt-20">
+            <h2
+                class="font-rowdies font-regular text-gray text-[1.5rem] text-center before:content-[''] before:w-[110px] before:h-[110px] before:bg-[url(./assets/testimonial_decor_ellipse.png)]  before:bg-no-repeat before:ml-[5rem] before:absolute before:hidden md:before:block before:bg-contain">
+                <span class="text-primary">Testimonials</span>
             </h2>
             <p class="mt-4 font-rowdies text-center font-[100] text-gray my-10">1What our student say about us</p>
 
+            <div class="mx-[5rem] pt-20 pb-20 md:pb-40  text-[#7E7EAA] flex justify-center items-center">
+                <div
+                    class="hidden md:block px-[2rem] pb-[10px] max-w-[450px] bg-white shadow-md relative translate-x-6 translate-y-10">
+                    <span class="block w-[50px] h-[60px] absolute left-[40%] -top-10"><img class="w-full"
+                            src="./assets/feedback_card_avatar.png" /></span>
+                    <p class="py-[2rem]">Such an amazing traniner and easily understand the entire
+                        syllabus, and the guidence will be super and good to the way of explaning.</p>
 
+                    <div class="flex items-center gap-1">
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/rating_star.png" /></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="text-center md:text-left px-[2rem] pb-[10px] max-w-[450px] bg-white shadow-md relative z-20">
+                    <span class="block w-[50px] h-[60px] absolute left-[40%] -top-10"><img class="w-full"
+                            src="./assets/feedback_card_avatar.png" /></span>
+                    <p class="py-[2rem] ">Such an amazing traniner and easily understand the entire
+                        syllabus, and the guidence will be super and good to the way of explaning.</p>
+
+                    <div class="flex justify-center md:justify-left items-center gap-1">
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/rating_star.png" /></span>
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="hidden md:block px-[2rem] pb-[10px] max-w-[450px] bg-white shadow-md relative -translate-x-4 translate-y-10 -z-3">
+                    <span class="block w-[50px] h-[60px] absolute left-[40%] -top-10"><img class="w-full"
+                            src="./assets/feedback_card_avatar.png" /></span>
+                    <p class="py-[2rem]">Such an amazing traniner and easily understand the entire
+                        syllabus, and the guidence will be super and good to the way of explaning.</p>
+
+                    <div class="flex items-center gap-1">
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/yellow_star.png" /></span>
+                        <span class="block w-[20px] h-[20px]"><img class="w-full"
+                                src="./assets/rating_star.png" /></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-right mx[1rem] md:mx-[5rem]"><span class="inline-block w-[50px] h-[50px]"><img class="w-full"
+                        src="./assets/left_arrow.png" /></span><span class="inline-block w-[50px] h-[50px]"><img
+                        class="rotate-180 w-full" src="./assets/left_arrow.png" /></span></p>
         </div>
+        <!-- testinmonial cards section ends -->
     </section>
     <!-- Testimonial section ends -->
 
     <!-- Footer section starts -->
     <section id="footer">
-        <div class="px-[5rem] p-10  bg-gradient-to-r from-[#477AE3] to-[#931BBD] flex justify-between">
+        <div
+            class="px-[1rem] md:px-[5rem] p-10  bg-gradient-to-r from-[#477AE3] to-[#931BBD] flex text-center md:text-left justify-center md:justify-between  flex-wrap gap-2 lg:gap-0">
             <div class="flex flex-col">
                 <p>Connect</p>
-                <span class="block my-8"><img src="./assets/header_logo.png" /></span>
+                <span class="block my-8 mx-auto md:mx-0"><img src="./assets/header_logo.png" /></span>
                 <small class="text-gray">Sri Jagannath Nivas,8-1-164/345/A/1,<br />
                     Pragati Colony, Mailardevpally, Nawab <br />
                     Saheb Kunta, Hyd, 500005 <br /></small>
             </div>
-            <div class="flex flex-col">
-                <p>Connect</p>
+            <div class="flex flex-col mr-[2rem]">
+                <p>Classes</p>
                 <p class="text-[0.8rem]">Classroom courses</p>
                 <p class="text-[0.8rem]">Virtual classroom courses</p>
                 <p class="text-[0.8rem]">E-learning courses</p>
                 <p class="text-[0.8rem]">Video Courses</p>
                 <p class="text-[0.8rem]">Offline Courses</p>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col mr-[2rem]">
                 <p>Community</p>
-                <p class="text-[0.8rem]">Classroom courses</p>
-                <p class="text-[0.8rem]">Virtual classroom courses</p>
-                <p class="text-[0.8rem]">E-learning courses</p>
-                <p class="text-[0.8rem]">Video Courses</p>
-                <p class="text-[0.8rem]">Offline Courses</p>
+                <p class="text-[0.8rem]">Learners</p>
+                <p class="text-[0.8rem]">Parteners</p>
+                <p class="text-[0.8rem]">Developers</p>
+                <p class="text-[0.8rem]">Transactions</p>
+                <p class="text-[0.8rem]">Blog</p>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col mr-[2rem]">
                 <p>Quick links</p>
-                <p class="text-[0.8rem]">Classroom courses</p>
-                <p class="text-[0.8rem]">Virtual classroom courses</p>
-                <p class="text-[0.8rem]">E-learning courses</p>
-                <p class="text-[0.8rem]">Video Courses</p>
-                <p class="text-[0.8rem]">Offline Courses</p>
+                <p class="text-[0.8rem]">Home</p>
+                <p class="text-[0.8rem]">Professional Education</p>
+                <p class="text-[0.8rem]">Courses</p>
+                <p class="text-[0.8rem]">Admissions</p>
+                <p class="text-[0.8rem]">Testimonial</p>
+                <p class="text-[0.8rem]">Programs</p>
             </div>
-            <div class="flex flex-col">
+            <div class="flex flex-col mr-[2rem]">
                 <p>More</p>
                 <p class="text-[0.8rem]">Press</p>
                 <p class="text-[0.8rem]">Investors</p>
@@ -486,15 +645,15 @@
         </div>
         <div class="pb-3 pt-[5rem]  bg-gradient-to-l from-[#0351AE] to-[#A542C8] flex justify-between items-center">
             <div class="flex gap-[2rem] mx-auto">
-                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                <span class="block w-[40px]  h-[40px] rounded-[50%] p-[0.3rem] bg-white"><img class="w-full"
                         src="./assets/footer_scoial-media_icon_1.png" /></span>
-                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                <span class="block w-[40px]  h-[40px] rounded-[50%] p-[0.3rem] bg-white"><img class="w-full"
                         src="./assets/footer_scoial-media_icon_2.png" /></span>
-                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                <span class="block w-[40px]  h-[40px] rounded-[50%] p-[0.4rem] bg-white"><img class="w-full"
                         src="./assets/footer_scoial-media_icon_3.png" /></span>
-                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                <span class="block w-[40px]  h-[40px] rounded-[50%] p-[0.4rem] bg-white"><img class="w-full"
                         src="./assets/footer_scoial-media_icon_4.png" /></span>
-                <span class="block p-2 rounded-[50%] bg-white"><img class="w-full"
+                <span class="block w-[40px]  h-[40px] rounded-[50%] p-[0.3rem]  bg-white"><img class="w-full"
                         src="./assets/footer_scoial-media_icon_5.png" /></span>
             </div>
         </div>
